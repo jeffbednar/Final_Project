@@ -8,7 +8,7 @@ function buildCharts(sample) {
         var transposedata = [];
         var i;
         var rowdata = [];
-        for(i=0; i < 438; i++) {
+        for (i = 0; i < 438; i++) {
             for (element in data) {
 
                 let columnvalue = data[element]
@@ -25,41 +25,107 @@ function buildCharts(sample) {
         var country = data.country;
         console.log(filtereddata);
         var date = [];
-        for(var i=0; i<filtereddata.length; i++) {
+        for (var i = 0; i < filtereddata.length; i++) {
             date.push(filtereddata[i][7]);
         }
         var people_fully_vaccinated = [];
-        for(var i=0; i<filtereddata.length; i++) {
+        for (var i = 0; i < filtereddata.length; i++) {
             people_fully_vaccinated.push(filtereddata[i][8]);
         }
-        var total_cases = data.cumulative_total_cases;
-        var cumulative_total_deaths = data.cumulative_total_deaths;
+        var cumulative_total_cases = [];
+        for (var i = 0; i < filtereddata.length; i++) {
+            cumulative_total_cases.push(filtereddata[i][3]);
+        }
+
+        var cumulative_total_deaths = [];
+        for (var i = 0; i < filtereddata.length; i++) {
+            cumulative_total_deaths.push(filtereddata[i][4]);
+        }
 
         var trace1 = [{
             type: "scatter",
 
             x: date,
-            y: people_fully_vaccinated
-            /*line: {
-                color: "#17BECF"
-            }*/
+            y: people_fully_vaccinated,
+            mode: 'marker',
+            marker: {
+                size: 20,
+                color: 'red',
+            }
+
+        }];
+        var trace2 = [{
+            type: "scatter",
+
+            x: date,
+            y: cumulative_total_cases,
+            mode: 'marker',
+            marker: {
+                size: 20,
+                color: 'red',
+            }
+        }];
+
+        var trace3 = [{
+            type: "scatter",
+
+            x: date,
+            y: cumulative_total_deaths,
+            mode: 'marker',
+            marker: {
+                size: 20,
+                color: 'red',
+            }
         }];
 
         var layout = {
-            title: `Covid -- People Fully Vaccinated`,
+            title: '<b> <i>Covid -- People Fully Vaccinated by Date</b></i>',
             xaxis: {
                 autorange: true,
-                type: "date"
+                type: "date",
+
             },
             yaxis: {
                 autorange: true,
                 type: "linear"
+
+            }
+
+        };
+        var layout2 = {
+            title: '<b> <i>Covid -- Total Cumulative Cases</b></i>',
+            xaxis: {
+                autorange: true,
+                type: "date",
+
+            },
+            yaxis: {
+                autorange: true,
+                type: "linear"
+
+            }
+        };
+
+
+        var layout3 = {
+            title: '<b> <i>Covid -- Cumulative Total Deaths</b></i>',
+            xaxis: {
+                autorange: true,
+                type: "date",
+
+            },
+            yaxis: {
+                autorange: true,
+                type: "linear"
+
             }
         };
         console.log(people_fully_vaccinated);
 
-        Plotly.newPlot("plot_data", trace1);
-    });
+            Plotly.newPlot("plot_data", trace1, layout);
+            Plotly.newPlot("plot_data2", trace2, layout2);
+            Plotly.newPlot("plot_data3", trace3, layout3);
+        });
 
 
 }
