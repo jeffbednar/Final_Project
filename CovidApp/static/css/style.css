@@ -27,19 +27,6 @@ position: relative;
   color: white;
 }
 
-
-
-/* .hero .btn {
-  display: block
-  width: 200px;
-  background-color: lightgrey;
-  border: 1px solid black;
-  color: white;
-  padding: 10px;
-  font-size: 15px;
-  border-radius: 10px;
-}  */
-
 .hero-btn {
   background-color: rgba(120, 122, 124, 0.815);
   border: none;
@@ -50,4 +37,9 @@ position: relative;
   border-radius: 2px;
   display: inline-block;
   font-size: 12px;
+}
+
+.panel-custom {
+    background-color: rgba(120, 122, 124, 0.815); !important;
+    color: white;
 }
