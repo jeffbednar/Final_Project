@@ -8,7 +8,7 @@ function buildCharts(sample) {
         var transposedata = [];
         var i;
         var rowdata = [];
-        for (i = 0; i < 438; i++) {
+        for (i = 0; i < 502; i++) {
             for (element in data) {
 
                 let columnvalue = data[element]
@@ -93,7 +93,7 @@ function buildCharts(sample) {
 
         };
         var layout2 = {
-            title: '<b> <i>Covid -- Total Cumulative Cases</b></i>',
+            title: '<b> <i>Covid Total Cases</b></i>',
             xaxis: {
                 autorange: true,
                 type: "date",
@@ -108,7 +108,7 @@ function buildCharts(sample) {
 
 
         var layout3 = {
-            title: '<b> <i>Covid -- Cumulative Total Deaths</b></i>',
+            title: '<b> <i>Covid Daily Deaths</b></i>',
             xaxis: {
                 autorange: true,
                 type: "date",
@@ -122,7 +122,7 @@ function buildCharts(sample) {
         };
         console.log(people_fully_vaccinated);
 
-            Plotly.newPlot("plot_data", trace1, layout);
+            // Plotly.newPlot("plot_data", trace1, layout);
             Plotly.newPlot("plot_data2", trace2, layout2);
             Plotly.newPlot("plot_data3", trace3, layout3);
         });
