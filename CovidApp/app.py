@@ -61,6 +61,41 @@ def countries():
 
 
 raw_file=pd.read_csv('./static/data/Final_Clean_Data.csv')
+
+@app.route('/predictions')
+def predictions():
+    return render_template('predictions.html')
+
+@app.route('/belgium')
+def belgium():
+    return render_template('belgium.html')
+@app.route('/chile')
+def chile():
+    return render_template('chile.html')
+@app.route('/denmark')
+def denmark():
+    return render_template('denmark.html')
+@app.route('/germany')
+def germany():
+    return render_template('germany.html')
+@app.route('/israel')
+def israel():
+    return render_template('israel.html')
+@app.route('/italy')
+def italy():
+    return render_template('italy.html')
+@app.route('/mexico')
+def mexico():
+    return render_template('mexico.html')
+@app.route('/romania')
+def romania():
+    return render_template('romania.html')
+@app.route('/united_kingdom')
+def united_kingdom():
+    return render_template('united_kingdom.html')
+@app.route('/united_states')
+def united_states():
+    return render_template('united_states.html')
  
 if __name__ == "__main__":
     app.run(debug=True)
