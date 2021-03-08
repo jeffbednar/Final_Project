@@ -89,8 +89,8 @@ a{
 
 /* Box Class */
 .box {
-  margin-top: 60px;
-  margin-bottom: 70px;
+  margin-top: 0px;
+  margin-bottom: 0px;
   color: black;
   background-color: white;
   padding: 30px;
