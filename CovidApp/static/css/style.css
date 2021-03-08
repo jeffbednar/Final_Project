@@ -40,6 +40,6 @@ position: relative;
 }
 
 .panel-custom {
-    background-color: rgba(120, 122, 124, 0.815); !important;
+    background-color: rgba(120, 122, 124, 0.815);
     color: white;
 }
